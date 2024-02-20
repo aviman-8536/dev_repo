@@ -1,0 +1,12 @@
+version: 0.0
+os: linux
+files:
+  - source: /appspec.yaml
+    destination: /home/ec2-user/demo-app
+hooks:
+  BeforeInstall:
+    - location: DEMO_AWS/my_files/before.sh
+      timeout: 300
+  AfterInstall:
+    - location: DEMO_AWS/my_files/after.sh
+      timeout: 300
